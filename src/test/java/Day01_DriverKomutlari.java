@@ -18,7 +18,7 @@ public class Day01_DriverKomutlari {
         driver.get("http://google.com");
         //herhangi bir web sayfasina gider
         driver.navigate().to("http://amazon.com");
-//bir onceki sayfaya geri git
+        //bir onceki sayfaya geri git
         driver.navigate().back();
 
 

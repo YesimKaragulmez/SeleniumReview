@@ -1,6 +1,8 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.AfterClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,10 +15,9 @@ public class Day01_OrnekAmazon {
 // 3. 2. Sıradaki ürüne tıklayacağız.
 // 4. Ürün sayfasına gittikten sonra, ürünün toplam fiyatını alacağız.
 // 5. Ürünün ortalama puanını (5 üzerinden) alacağız.
-
-
     @Test
     public void test() {
+
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -46,6 +47,9 @@ public class Day01_OrnekAmazon {
         textBox.sendKeys("kemal ozden");
         textBox.submit();
         driver.findElement(By.xpath("//div[@id='result-stats']")).getText();
+
+    }
+
 
     }
 //    public class Day01_OrnekAmazon {
@@ -78,4 +82,4 @@ public class Day01_OrnekAmazon {
 //        }
 //    }
 
-}
+

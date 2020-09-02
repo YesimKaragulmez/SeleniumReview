@@ -10,20 +10,26 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 public class Day02_Xpath {
     static WebDriver driver;
+
     @BeforeClass
-    public static void setUp(){
+    public static void setUp() {
         WebDriverManager.chromedriver().setup();
         // driver nesnesi oluşturduk.
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
+
     @Test
-    public void test1(){
+    public void test1() throws InterruptedException {
         driver.get("http://a.testaddressbook.com/");
         //<a id="sign-in" class="nav-item nav-link" data-test="sign-in"
         // href="/sign_in">Sign in</a>
-        // id               EVET, className        HAYIR, tagName          EVET, name             HAYIR, xpath            EVET, cssSelector      EVET, linkText         EVET, partialLinkText  EVET
+        // id=EVET, className=HAYIR, tagName=EVET, name=HAYIR, xpath=EVET, cssSelector=EVET,
+        // linkText=EVET, partialLinkText=  EVET 6 yolla locate edebilirim
+
+
+
         WebElement signInLinki = driver.findElement(By.linkText("Sign in"));
         signInLinki.click();
         //  ipucu : findElements kullanabilirsiniz.
@@ -63,8 +69,8 @@ public class Day02_Xpath {
     public static void tearDown(){
         driver.quit();
     }
-}
 
+}
 
 
 
