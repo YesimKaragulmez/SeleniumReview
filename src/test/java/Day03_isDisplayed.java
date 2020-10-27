@@ -21,7 +21,7 @@ public class Day03_isDisplayed {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    @Ignore
+@Ignore
     @Test
     public void isDisplayed() {
         driver.get("http://the-internet.herokuapp.com/");
@@ -35,17 +35,24 @@ public class Day03_isDisplayed {
     @Test
     public void isSelected() {
         driver.get("http://the-internet.herokuapp.com/dynamic_controls");
+
         WebElement secimElementi = driver.findElement(By.xpath("//input[@type='checkbox']"));
+
         // eğer bir webelement seçili ise, TRUE değilse FALSE
         boolean seciliMi = secimElementi.isSelected();
-        System.out.println("Seçili mi 1: " + seciliMi);
+        System.out.println("Seçili mi 1: " + seciliMi);//bu durumda false secili degil
+
         secimElementi.click();
+
         boolean seciliMi2 = secimElementi.isSelected();
         System.out.println("Seçili mi 2: " + seciliMi2);
+
         if (secimElementi.isSelected()) {// true false
             // eğer seçili ise burayı
+            System.out.println(secimElementi.isSelected());
         } else {
             // değilse burayı kullanırsınız.
+            System.out.println(secimElementi.isSelected());
         }
     }
         @Test

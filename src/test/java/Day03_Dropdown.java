@@ -12,7 +12,6 @@ import java.util.concurrent.TimeUnit;
 
 public class Day03_Dropdown {
     static WebDriver driver;
-
     @BeforeClass
     public static void setUp() {
         WebDriverManager.chromedriver().setup();

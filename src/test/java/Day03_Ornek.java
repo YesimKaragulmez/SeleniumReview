@@ -14,14 +14,16 @@ import java.util.concurrent.TimeUnit;
 public class Day03_Ornek {
 
     static WebDriver driver;
+
     @BeforeClass
-    public static void setUp(){
+    public static void setUp() {
         WebDriverManager.chromedriver().setup();
         // driver nesnesi oluşturduk.
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
+
     // 1. DropDown'da Books kategorisini seçelim.
     // 2. Arama kutusuna JAVA yazalım.
     // 3. Toplam sonuç sayısını ekrana yazdıralım.
@@ -29,8 +31,10 @@ public class Day03_Ornek {
     // 5. Back to results linki varsa, testimiz TRUE yoksa FALSE
     //      pass        fail
     @Test
-    public void amazonDropdownTest(){
+    public void amazonDropdownTest() {
         driver.get("http://amazon.com");
+
+
         WebElement dropDown = driver.findElement(By.id("searchDropdownBox"));
         Select select = new Select(dropDown);
         select.selectByVisibleText("Books");

@@ -43,7 +43,7 @@ public class Day03_HardAssert {
         // Eğer GOOGLE kelimesi yoksa TEST BAŞARILI.
         // Eğer GOOGLE kelimesi varsa TEST BAŞARISIZ.
         boolean falseMu = baslik.contains("Google");
-        Assert.assertFalse(falseMu); // FALSE
+        Assert.assertFalse(falseMu);// FALSE
     }
     @Test
     public void test3(){
@@ -51,8 +51,9 @@ public class Day03_HardAssert {
         String baslik = driver.getTitle();
         // iki farklı değeri karşılaştırıyorsunuz
         // String, boolean, int, long, float
-        Assert.assertEquals("Amazon.com",baslik); // false
-        System.out.println("Ekrana yazı yazdır.");
+        Assert.assertEquals("Amazon.com",baslik); // false olunca test fail oldu
+        //kalan kismi calistirmadi.bu da hard assertin en faydali yani testerler icin
+        System.out.println("Ekrana yazı yazdır.");//artik burasi calismaz
         // Bizim beklentimiz : Amazon.com
         // Gerçek Durum      : Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more
     }
